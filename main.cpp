@@ -5,6 +5,7 @@
 
 #include "ej1/ej1.cpp"
 #include "ej2/ej2.cpp"
+#include "ej3/ej3.cpp"
 
 using namespace std;
 
@@ -12,14 +13,13 @@ int main() {
 
     Agen<char> A{};
 
-    /*rellenarAgen(A, '#');
-
-    ofstream os;
-    os.open(string(getenv("HOMEDRIVE")) + string (getenv("HOMEPATH")) + "\\Desktop\\a.dat");
+    /*ofstream os;
+    rellenarAgen(A, '#');
+    os.open(string(getenv("HOMEDRIVE")) + string (getenv("HOMEPATH")) + "\\Desktop\\Arboles\\Generales\\b.dat");
     imprimirAgen(os, A, '#');*/
 
     ifstream is;
-    is.open(string(getenv("HOMEDRIVE")) + string (getenv("HOMEPATH")) + "\\Desktop\\A.dat");
+    is.open(string(getenv("HOMEDRIVE")) + string (getenv("HOMEPATH")) + "\\Desktop\\Arboles\\Generales\\b.dat");
 
     rellenarAgen(is, A);
 
@@ -27,16 +27,7 @@ int main() {
     imprimirAgen(A);
     cout << "*****************" << endl;
 
-    //cout << "El grado del árbol es: " << calcularGrado(A) << endl;
-
-    // Nodo f
-    typename Agen<char>::nodo f = A.hermDrcho(A.hijoIzqdo(A.hijoIzqdo(A.raiz())));
-    typename Agen<char>::nodo c = A.hermDrcho(A.hijoIzqdo(A.raiz()));
-    typename Agen<char>::nodo a = A.raiz();
-
-    cout << "La profundidad del nodo \"" << A.elemento(f) << "\" es " << profundidad(A, f) << endl;
-    cout << "La profundidad del nodo \"" << A.elemento(c) << "\" es " << profundidad(A, c) << endl;
-    cout << "La profundidad del nodo \"" << A.elemento(a) << "\" es " << profundidad(A, a) << endl;
+    cout << "La altura del árbol es " << altura(A, A.raiz()) << endl;
 
     return 0;
 }
